@@ -1,0 +1,5 @@
+C:\Users\Skippy\documents\visual studio 2010\Projects\RabRacer2\RabRacer2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Skippy\documents\visual studio 2010\Projects\RabRacer2\RabRacer2\bin\Debug\RabRacer2.exe
+C:\Users\Skippy\documents\visual studio 2010\Projects\RabRacer2\RabRacer2\bin\Debug\RabRacer2.pdb
+C:\Users\Skippy\documents\visual studio 2010\Projects\RabRacer2\RabRacer2\obj\x86\Debug\RabRacer2.exe
+C:\Users\Skippy\documents\visual studio 2010\Projects\RabRacer2\RabRacer2\obj\x86\Debug\RabRacer2.pdb
