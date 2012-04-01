@@ -1,0 +1,16 @@
+RabRacer will be a game where you train,breed and race rabbits. Your goal is to become the wealthiest
+most reknown rabit breeder/trainer in the world. I would like to implement at least two different game
+modes. Sprint and endurance racing. Each type of racing requires different types of stats for your 
+rabbit.
+
+RabRacer v0.01
+---------------------------------------------------------
+*You can now create a rabbit with a name and different stats.
+
+
+
+RabRacer v0.02
+---------------------------------------------------------
+* A random sized inventory of randomly generated
+rabbits can now be viewed at the new rabbit shop.
+*Game now runs in a state pattern to control game flow.
