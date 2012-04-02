@@ -9,8 +9,7 @@ namespace RabRacer2
     {
         static void Main(string[] args)
         {
-            StateContext context = new StateContext();
-            context.welcomeScreen();
+            Game.start();
         }  
     }
 }

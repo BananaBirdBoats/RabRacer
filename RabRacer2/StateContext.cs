@@ -15,6 +15,7 @@ namespace RabRacer2
 
         public void setState(State newState)
         {
+           
             this.myState = newState;
         }
 
@@ -25,6 +26,7 @@ namespace RabRacer2
 
         public void welcomeScreen()
         {
+            Game.status(Game.getPlayer());
             this.myState.welcomeScreen(this);
         }
     }

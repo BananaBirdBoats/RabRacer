@@ -23,7 +23,15 @@ namespace RabRacer2
             {
                 Console.WriteLine("Welcome to RabRacer!");
                 Console.WriteLine("Press the number to take you to your desired location.");
-                Console.WriteLine("1. Rabbit Shop");
+                //Checking for the existence of a player.
+                if (Game.getPlayer() == null)
+                {
+                    Console.WriteLine("1. Create new player");
+                }
+                else
+                {
+                    Console.WriteLine("1. Rabbit Shop");
+                }
                 Console.WriteLine("0. Quit");
                 input = Console.ReadLine();
                 caseSwitch=int.Parse(input);
@@ -35,9 +43,18 @@ namespace RabRacer2
                         input="0";
                         break;
                      case 1:
-                        Console.WriteLine("Moving to the rabbit shop");
-                        stateContext.setState(new RabbitShop());
-                        stateContext.welcomeScreen();
+                        if (Game.getPlayer() == null)
+                        {
+                            Console.WriteLine("Please enter a name for your player.");
+                            Game.setPlayer(new Player(Console.ReadLine()));
+                            stateContext.welcomeScreen();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Moving to the rabbit shop");
+                            stateContext.setState(new RabbitShop());
+                            stateContext.welcomeScreen();
+                        }
                         break;
                     default:
                         Console.WriteLine("Invalid input");

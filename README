@@ -14,3 +14,9 @@ RabRacer v0.02
 * A random sized inventory of randomly generated
 rabbits can now be viewed at the new rabbit shop.
 *Game now runs in a state pattern to control game flow.
+
+RabRacer v0.03
+---------------------------------------------------------
+*You can now create a new player with customizable name
+*Players now have credits to spend on rabbits
+*Rabbits can now be purchased from the rabbit store.

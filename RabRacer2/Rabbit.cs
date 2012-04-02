@@ -21,13 +21,16 @@ namespace RabRacer2
         //The name of the rabbit.
         private String name;
 
+        private int cost;
+
         public Rabbit(String name,int strength, int endurance, int speed, int agility)
         {
             this.name = name;
             this.strength=strength;
             this.endurance=endurance;
             this.speed=speed;
-            this.agility = agility;        
+            this.agility = agility;
+            this.setCost();
         }
 
         public String getName()
@@ -163,7 +166,7 @@ namespace RabRacer2
             }
             else if (this.speed <= 300)
             {
-                return this.name + " looks .";
+                return this.name + " looks like molassus.";
             }
             else if (this.speed <= 400)
             {
@@ -219,6 +222,15 @@ namespace RabRacer2
         public static int getMaxStat()
         {
             return MAXSTAT;
+        }
+
+        public int getCost()
+        {
+            return this.cost;
+        }
+        public void setCost()
+        {
+            this.cost = (this.strength + this.endurance + this.speed);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace RabRacer2
             Console.WriteLine("Sorry we are out of stock. " + name);
             stateContext.setState(new TitleScreen());
         }
+        
         //Sets up a new rabbit shop and populates it with new random rabbits.
         public RabbitShop()
         {
@@ -31,7 +32,8 @@ namespace RabRacer2
             }
 
         }
-        //Home screen for rabbit shopping
+       
+        //Default actions for the RabbitShop state.
         public void welcomeScreen(StateContext stateContext)
         {
             
@@ -41,6 +43,7 @@ namespace RabRacer2
             {
                 Console.WriteLine("Welcome to Rabbit Emporium!");
                 Console.WriteLine("We currently have " + inventory.Length + " rabbits in stock.");
+                
                 Console.WriteLine("Press the number to take you to your desired action.");
                 Console.WriteLine("2. Purchase Rabbits");
                 Console.WriteLine("0. Quit");
@@ -62,7 +65,7 @@ namespace RabRacer2
                         stateContext.welcomeScreen();
                         break;
                     case 2:
-                        this.rabbitPurchase(stateContext);
+                        this.browseRabbits(stateContext);
                         break;
 
                     default:
@@ -73,8 +76,19 @@ namespace RabRacer2
 
             }
         }
-        //This method will be responsible for the purchase of new rabbits. This method currently allows for rabbit descriptions only  
-        public void rabbitPurchase(StateContext stateContext)
+        //Performs the mathmatical operations to purchase rabits.
+        public void purchaseRabbit(Rabbit rabbit)
+        {
+            Player player = Game.getPlayer();
+            player.setCredits(player.getCredits() - rabbit.getCost());
+            Console.WriteLine("Deducted $" + rabbit.getCost() + " from your account");
+            player.setCurrentRabbit(rabbit);
+            Game.status(player);
+
+        }
+        //This method will be responsible for the purchase of new rabbits. This method currently allows for rabbit descriptions only
+      
+        public void browseRabbits(StateContext stateContext)
         {
 
             String input = "-1";
@@ -105,7 +119,15 @@ namespace RabRacer2
                         Console.WriteLine(this.inventory[caseSwitch].getName() + "\n" +
                                           this.inventory[caseSwitch].describeStrength() + "\n" +
                                           this.inventory[caseSwitch].describeEndurance() + "\n" +
-                                          this.inventory[caseSwitch].describeSpeed());
+                                          this.inventory[caseSwitch].describeSpeed()+"\n$"+
+                                          this.inventory[caseSwitch].getCost());
+                        Console.WriteLine("Press " + caseSwitch + " again to purchase the rabbit " + this.inventory[caseSwitch].getName());
+                        Console.WriteLine("Press any other key to go back");
+                        input=Console.ReadLine();
+                        if(int.Parse(input)==caseSwitch){
+                            this.purchaseRabbit(this.inventory[caseSwitch]);
+                        }
+
                         Console.WriteLine("");
                         break;
                 }
